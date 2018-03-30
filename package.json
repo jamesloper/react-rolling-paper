@@ -1,0 +1,53 @@
+{
+  "name": "react-rolling-paper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesloper/react-rolling-paper.git"
+  },
+  "keywords": [
+    "react",
+    "view",
+    "pager",
+    "viewpager",
+    "touch"
+  ],
+  "author": "James Loper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesloper/react-rolling-paper/issues"
+  },
+  "homepage": "https://github.com/jamesloper/react-rolling-paper",
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-react-jsx",
+      "transform-class-properties"
+    ]
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "webpack-cli": "^2.0.12"
+  }
+}
