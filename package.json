@@ -1,7 +1,7 @@
 {
   "name": "react-rolling-paper",
   "version": "1.0.0",
-  "description": "",
+  "description": "React component that creates a div with an optimized custom scrollbar inside of it.",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

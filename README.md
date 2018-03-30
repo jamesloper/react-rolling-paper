@@ -1,4 +1,4 @@
-A simple React Component that is under 1k, only 90 lines of code, and is totally optimized!
+React component that creates a div with an optimized custom scrollbar inside of it. The built file is about 1k, only 90 lines of code!
 
 `npm install --save react-rolling-paper`
 
