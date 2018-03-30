@@ -7,8 +7,6 @@ class RollingPaper extends Component {
 	constructor(props) {
 		super(props);
 		this.mouseOver = this.mouseOver.bind(this);
-		// this.touchStart = this.touchStart.bind(this);
-		// this.touchMove = this.touchMove.bind(this);
 		this.scrollWheel = this.scrollWheel.bind(this);
 		this.scroll = this.scroll.bind(this);
 		this.startDraggingScrollbar = this.startDraggingScrollbar.bind(this);
@@ -32,8 +30,6 @@ class RollingPaper extends Component {
 				ref={el => this.el = el}
 				className={`${className} scroller ${activeClass}`}
 				onMouseOver={this.mouseOver}
-				onTouchStart={this.touchStart}
-				onTouchMove={this.touchMove}
 				onWheel={this.scrollWheel}
 				onScroll={this.scroll}
 			>
@@ -74,17 +70,6 @@ class RollingPaper extends Component {
 		let px = this.el.scrollTop * (visiblePercent + 1);
 		this.bar.style[xform] = `translateY(${px}px)`;
 	}
-
-	// touchStart(e) {
-	// 	this.initialY = e.touches[0].pageY;
-	// 	this.initialScroll = this.el.scrollTop;
-	// 	this.setState({'active': true});
-	// }
-	//
-	// touchMove(e) {
-	// 	e.preventDefault();
-	// 	this.el.scrollTop = this.initialScroll - (e.touches[0].pageY - this.initialY);
-	// }
 
 	startDraggingScrollbar(e) {
 		this.initialY = e.pageY;

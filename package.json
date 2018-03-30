@@ -1,6 +1,6 @@
 {
   "name": "react-rolling-paper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component that creates a div with an optimized custom scrollbar inside of it.",
   "main": "build/index.js",
   "scripts": {
@@ -14,10 +14,10 @@
   },
   "keywords": [
     "react",
-    "view",
-    "pager",
-    "viewpager",
-    "touch"
+    "div",
+    "scroller",
+    "scrollbar",
+    "custom"
   ],
   "author": "James Loper",
   "license": "MIT",
@@ -30,9 +30,8 @@
       "env"
     ],
     "plugins": [
-      "transform-object-rest-spread",
       "transform-react-jsx",
-      "transform-class-properties"
+      "babel-throw-error-uglifier"
     ]
   },
   "dependencies": {
@@ -48,6 +47,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "babel-throw-error-uglifier": "^1.0.1"
   }
 }
