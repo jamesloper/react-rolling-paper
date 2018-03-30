@@ -7,21 +7,21 @@ class RollingPaper extends Component {
 	constructor(props) {
 		super(props);
 		this.mouseOver = this.mouseOver.bind(this);
-		this.touchStart = this.touchStart.bind(this);
-		this.touchMove = this.touchMove.bind(this);
+		// this.touchStart = this.touchStart.bind(this);
+		// this.touchMove = this.touchMove.bind(this);
 		this.scrollWheel = this.scrollWheel.bind(this);
 		this.scroll = this.scroll.bind(this);
 		this.startDraggingScrollbar = this.startDraggingScrollbar.bind(this);
 		this.dragScrollbar = this.dragScrollbar.bind(this);
 		this.dragEnd = this.dragEnd.bind(this);
-		this.state = {hover: false};
+		this.state = {active: false};
 	}
 
 	render() {
 		const {children, className} = this.props;
-		const {hover, visiblePercent} = this.state;
+		const {active, visiblePercent} = this.state;
 
-		let hoverClass = (hover) ? 'scroller-active' : '';
+		let activeClass = (active) ? 'scroller-active' : '';
 		let barStyle = {
 			height: `${visiblePercent * 100}%`,
 			display: (visiblePercent < 1) ? 'block' : 'none',
@@ -30,7 +30,7 @@ class RollingPaper extends Component {
 		return (
 			<div
 				ref={el => this.el = el}
-				className={`${className} scroller ${hoverClass}`}
+				className={`${className} scroller ${activeClass}`}
 				onMouseOver={this.mouseOver}
 				onTouchStart={this.touchStart}
 				onTouchMove={this.touchMove}
@@ -50,7 +50,7 @@ class RollingPaper extends Component {
 
 	mouseOver() {
 		const visiblePercent = this.el.offsetHeight / this.el.scrollHeight;
-		this.setState({'visiblePercent': visiblePercent, 'hover': true});
+		this.setState({'visiblePercent': visiblePercent});
 	}
 
 	scrollWheel(e) {
@@ -78,7 +78,7 @@ class RollingPaper extends Component {
 	// touchStart(e) {
 	// 	this.initialY = e.touches[0].pageY;
 	// 	this.initialScroll = this.el.scrollTop;
-	// 	this.setState({'hover': true});
+	// 	this.setState({'active': true});
 	// }
 	//
 	// touchMove(e) {
@@ -91,7 +91,7 @@ class RollingPaper extends Component {
 		this.initialScroll = this.el.scrollTop;
 		document.addEventListener('mousemove', this.dragScrollbar);
 		document.addEventListener('mouseup', this.dragEnd);
-		this.setState({'hover': true});
+		this.setState({'active': true});
 	}
 
 	dragScrollbar(e) {
@@ -102,7 +102,7 @@ class RollingPaper extends Component {
 	dragEnd() {
 		document.removeEventListener('mousemove', this.dragScrollbar);
 		document.removeEventListener('mouseup', this.dragEnd);
-		this.setState({'hover': false});
+		this.setState({'active': false});
 	}
 }
 
