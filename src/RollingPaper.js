@@ -28,6 +28,7 @@ class RollingPaper extends Component {
 				onMouseOver={this.mouseOver}
 				onScroll={this.updateScrollbar}
 				onWheel={this.mouseWheel}
+				onMouseLeave={this.mouseLeave}
 			>
 				<div
 					className="scrollbar"
@@ -86,6 +87,10 @@ class RollingPaper extends Component {
 	dragEnd = () => {
 		removeListener('mousemove', this.dragScrollbar);
 		removeListener('mouseup', this.dragEnd);
+		this.setState({'hover': false});
+	};
+
+	mouseLeave = () => {
 		this.setState({'hover': false});
 	};
 }
